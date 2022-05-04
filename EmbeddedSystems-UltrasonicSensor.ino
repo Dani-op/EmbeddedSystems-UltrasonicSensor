@@ -1,4 +1,6 @@
-    // defines pins numbers
+//https://www.eccircuit.com/2018/01/arduino-code-for-2-way-traffic-light.html
+//https://www.youtube.com/watch?v=C8llntDR3fA
+// defines pins numbers
 const int trigPin = 9;
 const int echoPin = 10;
 const int buzzer = 11;
@@ -28,7 +30,6 @@ void loop() {
 digitalWrite(trigPin, LOW);
 delayMicroseconds(2);
 
-// Sets the trigPin on HIGH state for 10 micro seconds
 digitalWrite(trigPin, HIGH);
 delayMicroseconds(10);
 digitalWrite(trigPin, LOW);
@@ -37,7 +38,7 @@ digitalWrite(trigPin, LOW);
 duration = pulseIn(echoPin, HIGH);
 
 // Calculating the distance
-distance= duration*0.034/2;
+distance= duration*0.034/2; //converting distance from points to integers ref:stackoverflow
 
 safetyDistance = distance;
 if (safetyDistance <= 7){
@@ -47,17 +48,14 @@ if (safetyDistance <= 7){
    digitalWrite(ledPinYellow, LOW);
   digitalWrite(ledPinRed, LOW);
   delay(550);
- 
   digitalWrite(ledPinGreen, HIGH);
 
 }
 else{
   digitalWrite(buzzer, LOW);
   digitalWrite(ledPinGreen, LOW);
- delay(500);
-   digitalWrite(ledPinYellow, HIGH);
- 
-  
+  delay(500);
+  digitalWrite(ledPinYellow, HIGH);
   delay(500);
   digitalWrite(ledPinYellow, LOW);  
   digitalWrite(ledPinRed, HIGH);

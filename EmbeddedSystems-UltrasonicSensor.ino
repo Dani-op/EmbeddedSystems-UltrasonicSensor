@@ -42,7 +42,7 @@ distance= duration*0.034/2;
 safetyDistance = distance;
 if (safetyDistance <= 7){
   digitalWrite(buzzer, HIGH);
-  delay(550);
+  delay(700);
   digitalWrite(buzzer, LOW);
    digitalWrite(ledPinYellow, LOW);
   digitalWrite(ledPinRed, LOW);

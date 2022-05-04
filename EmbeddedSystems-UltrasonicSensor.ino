@@ -17,6 +17,8 @@ pinMode(trigPin, OUTPUT); // Sets the trigPin as an Output
 pinMode(echoPin, INPUT); // Sets the echoPin as an Input
 pinMode(buzzer, OUTPUT);
 pinMode(ledPinGreen, OUTPUT);
+pinMode(ledPinYellow, OUTPUT);
+pinMode(ledPinRed, OUTPUT);
 Serial.begin(9600); // Starts the serial communication
 }
 
@@ -40,6 +42,8 @@ distance= duration*0.034/2;
 safetyDistance = distance;
 if (safetyDistance <= 7){
   digitalWrite(buzzer, HIGH);
+  delay(550);
+  digitalWrite(buzzer, LOW);
    digitalWrite(ledPinYellow, LOW);
   digitalWrite(ledPinRed, LOW);
   delay(550);
@@ -50,9 +54,12 @@ if (safetyDistance <= 7){
 else{
   digitalWrite(buzzer, LOW);
   digitalWrite(ledPinGreen, LOW);
-  digitalWrite(ledPinYellow, HIGH);
+ delay(500);
+   digitalWrite(ledPinYellow, HIGH);
+ 
+  
   delay(500);
-  digitalWrite(ledPinYellow, LOW);
+  digitalWrite(ledPinYellow, LOW);  
   digitalWrite(ledPinRed, HIGH);
 }
 

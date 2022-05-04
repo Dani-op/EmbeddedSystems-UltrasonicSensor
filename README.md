@@ -1,7 +1,7 @@
 
 # Ultrasonic Sensor TrafficLight System 
 
- A simple project for managing a one-way road traffic signal system with pedestrian crossing and a buzzer.
+ A simple project based on Arduino Mega for managing a one-way road traffic signal system with pedestrian crossing and a buzzer.
 
 ## KeyPoints:
 - #### Yellow: A blinking yellow light indicates that pedestrians can safely cross the road.

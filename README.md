@@ -10,4 +10,4 @@
 ## ProjectImage
 ![image](/Project-Image.jpg)
 ## Tinkercad
-![tinkercad](/tinkercad.jpg)
+![tinkercad](/tinkercad.png)

@@ -2,8 +2,9 @@
 const int trigPin = 9;
 const int echoPin = 10;
 const int buzzer = 11;
-const int ledPinRED = 13;
-const int ledPinLow = 7;
+const int ledPinGreen = 13;
+const int ledPinYellow = 22;
+const int ledPinRed = 6; 
 
 // defines variables
 long duration;
@@ -15,7 +16,7 @@ void setup() {
 pinMode(trigPin, OUTPUT); // Sets the trigPin as an Output
 pinMode(echoPin, INPUT); // Sets the echoPin as an Input
 pinMode(buzzer, OUTPUT);
-pinMode(ledPinRED, OUTPUT);
+pinMode(ledPinGreen, OUTPUT);
 Serial.begin(9600); // Starts the serial communication
 }
 
@@ -39,13 +40,20 @@ distance= duration*0.034/2;
 safetyDistance = distance;
 if (safetyDistance <= 7){
   digitalWrite(buzzer, HIGH);
-  digitalWrite(ledPinRED, HIGH);
-  digitalWrite(ledPinLow, LOW);
+   digitalWrite(ledPinYellow, LOW);
+  digitalWrite(ledPinRed, LOW);
+  delay(550);
+ 
+  digitalWrite(ledPinGreen, HIGH);
+
 }
 else{
   digitalWrite(buzzer, LOW);
-  digitalWrite(ledPinLow, HIGH);
-  digitalWrite(ledPinRED, LOW);
+  digitalWrite(ledPinGreen, LOW);
+  digitalWrite(ledPinYellow, HIGH);
+  delay(500);
+  digitalWrite(ledPinYellow, LOW);
+  digitalWrite(ledPinRed, HIGH);
 }
 
 // Prints the distance on the Serial Monitor
